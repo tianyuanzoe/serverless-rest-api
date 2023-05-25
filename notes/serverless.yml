@@ -92,6 +92,7 @@ functions:
           path: notes
           authorizer: 
             name: userpool_authorizer
+            type: COGNITO_USER_POOLS
             arn: ${ssm:/notes/${self:provider.stage}/userPoolArn}            
 
 # you can add CloudFormation resource templates here
