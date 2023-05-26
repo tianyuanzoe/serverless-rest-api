@@ -93,7 +93,8 @@ functions:
           authorizer: 
             name: userpool_authorizer
             type: COGNITO_USER_POOLS
-            arn: ${ssm:/notes/${self:provider.stage}/userPoolArn}            
+            # arn: ${ssm:/notes/${self:provider.stage}/userPoolArn}  
+            arn: !GetAtt cognitoUserPool.Arn          
 
 # you can add CloudFormation resource templates here
 resources:
